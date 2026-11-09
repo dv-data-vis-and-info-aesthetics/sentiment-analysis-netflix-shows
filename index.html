@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment (starter)</title>
+    <style>
+        body {
+            font-family: Inter;
+            margin: 2rem;
+        }
+        p {
+            font-size: 16px;
+            color: black;
+        }
+        #summary {
+            font-family: sans-serif;
+            margin-bottom: 1rem;
+        }
+        #app {
+            max-width: 900px;
+            min-height: 200px;
+            border: 1px solid gray;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        #app p {
+            margin: 0;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <!--
+      STARTER FILE: how does Frankenstein feel, sentence by sentence?
+      This lab runs with Vite, NOT Live Server. In the VS Code terminal,
+      inside this 07_sentiment folder:
+        npm install     (once, downloads wink-sentiment and vite)
+        npm run dev     (every time), then open the localhost link it prints
+    -->
+    <h1>Amount of Netflix shows by genre colored by the sentiment analysis of their summary</h1>
+    <h2>Shows with a "neutral" scoring are less common</h2>
+    <div id="summary"></div>
+    <div id="app"></div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module" src="./app-starter.js"></script>
+</body>
+</html>
