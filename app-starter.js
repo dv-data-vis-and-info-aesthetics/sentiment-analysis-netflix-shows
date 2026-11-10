@@ -27,6 +27,7 @@ const genre_analyzed = all_genres_clean.map((genre) => {
   return {
     genre: genre[0],
     average: average,
+    amount: genre[1]
   }
 })
 
@@ -43,7 +44,7 @@ const color_scale = d3.scaleLinear()
   .range(['#d73027', '#999999', '#1a9850'])
 
 const width_scale = d3.scaleLinear()
-  .domain([0, d3.max(genre_analyzed, (d) => Math.abs(d.average))])
+  .domain([0, d3.max(genre_analyzed, (d) => d.amount)])
   .range([0, 400])
 
 // ---- STEP 5: draw every sentence ------------------------------------------
@@ -54,6 +55,6 @@ app
   .data(genre_analyzed)
   .join('p')
   .text((d) => d.genre)
-  .style('width', (d) => width_scale(Math.abs(d.average)) + 'px')
+  .style('width', (d) => width_scale(d.amount) + 'px')
   .style('background-color', (d) => color_scale(d.average ))
   .attr('title', (d) => `average: ${d.average}`)
